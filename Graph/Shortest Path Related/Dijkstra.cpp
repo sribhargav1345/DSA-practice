@@ -4,7 +4,9 @@ using namespace std;
 // Weighted, Undirected graphs
 // Not applicable for -ve weights and cycles.
 
-// We can use priority_queue/ queue(takes more time)/ set for Dijkstra
+// We can use priority_queue/ queue(takes more time)/ set(similar to pq) for Dijkstra
+// Whenever Dijkstra, u need to get priority_queue and Dist array to your mind
+
 class Solution
 {
 	public:
