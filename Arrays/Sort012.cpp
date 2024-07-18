@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// Dutch National flag algorithm
+class Solution {
+public:
+    void sortColors(vector<int>& arr) {
+        // DNF algorithm -> 3-pointer approach
+
+        int n = arr.size();
+        int low = 0,mid = 0,high = n - 1; // 3 pointers
+
+        while(mid<=high)
+        {
+            if (arr[mid] == 0) 
+            {
+                swap(arr[low], arr[mid]);
+
+                low++;
+                mid++;
+            }
+
+            else if (arr[mid] == 1) {
+                mid++;
+            }
+
+            else {
+                swap(arr[mid], arr[high]);
+                high--;
+            }
+        }   
+    }
+};
