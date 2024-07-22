@@ -92,7 +92,47 @@ void solvepro()
 {
     // Code here, int1 for taking 1 input, int4 for 4 inputs, vecin for vector taking
     // for loop -> forn, sum of all array ele -> allsum, prefixsum -> prefixsum, st1 -> takestring
+    ll n;
+    cin>>n;
 
+    vector<ll> arr;
+    for(int i=0;i<n;i++)
+    {
+        ll x;
+        cin>>x;
+    
+        arr.push_back(x);
+    }
+    
+    int i = 0,j = n-1;
+    ll ans= 0;
+
+    ll sum1 = arr[i];
+    ll sum2 = arr[j];
+
+    while(i<j)
+    {
+        if(sum1 == sum2)
+        {
+            ans = max(ans,n-j+i+1);
+            i++;
+            j--;
+
+            sum1 += arr[i];
+            sum2 += arr[j];
+        }
+        else if(sum1>sum2)
+        {
+            j--;
+            sum2 += arr[j];
+        }
+        else
+        {
+            i++;
+            sum1 += arr[i];
+        }
+    }
+    cout<<ans<<endl;
 }
 
 

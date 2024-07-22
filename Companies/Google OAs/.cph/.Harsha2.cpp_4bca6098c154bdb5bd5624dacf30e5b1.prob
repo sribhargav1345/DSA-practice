@@ -1,0 +1,1 @@
+{"name":"Local: Harsha2","url":"d:\\Placements\\DSA-practice\\Companies\\Google OAs\\Harsha2.cpp","tests":[{"id":1721547155877,"input":"2\n3\nabc\n5\nadbec\n1 4 3 5 2\n3\nabc\n5\nadcbe\n1 4 3 5 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Placements\\DSA-practice\\Companies\\Google OAs\\Harsha2.cpp","group":"local","local":true}
