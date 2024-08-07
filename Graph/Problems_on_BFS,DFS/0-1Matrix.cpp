@@ -5,6 +5,7 @@ class Solution {
 public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& grid) {
         int n = grid.size(); 
+		
 	    int m = grid[0].size(); 
 	    // visited and distance matrix
 	    vector<vector<int>> vis(n, vector<int>(m, 0)); 

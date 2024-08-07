@@ -6,6 +6,7 @@ using namespace std;
 class Solution {
 public:
     vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        
         int n = nums2.size();
         int m = nums1.size();
 
@@ -22,6 +23,7 @@ public:
             {
                 st.pop();
             }
+
             if(st.empty())
             {
                 ans.push_back(-1);
@@ -33,6 +35,7 @@ public:
 
         reverse(ans.begin(),ans.end());
         unordered_map<int,int> mp;
+
         for(int i=0;i<n;i++)
         {
             mp[nums2[i]] = ans[i];
