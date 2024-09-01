@@ -1,10 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
-struct Edge {
-    int u, v, w;
-};
-
 class DisjointSet {
     vector<int> rank,parent,size;
 
@@ -13,7 +6,6 @@ class DisjointSet {
             rank.resize(n + 1, 0);
             parent.resize(n + 1);
             size.resize(n + 1);
-
             for (int i = 0; i <= n; i++) {
                 parent[i] = i;
             }
@@ -29,7 +21,6 @@ class DisjointSet {
             int ulp_u = findUPar(u);
             int ulp_v = findUPar(v);
             if (ulp_u == ulp_v) return;
-            
             if (rank[ulp_u] < rank[ulp_v]) {
                 parent[ulp_u] = ulp_v;
             }
@@ -57,48 +48,3 @@ class DisjointSet {
             }
         }
 };
-
-int solve(int n, vector<Edge>& edges) {
-
-    sort(edges.begin(), edges.end(), [](Edge& a, Edge& b) {
-        return a.w > b.w;
-    });
-
-    DSU dsu(n);
-
-    int mst_weight = 0;
-    int total_weight = 0;
-
-    for (const auto& edge : edges) {
-        total_weight += edge.w;
-    }
-
-    for (const auto& edge : edges){
-        if (dsu.find(edge.u) != dsu.find(edge.v)) {
-            dsu.unite(edge.u, edge.v);
-            mst_weight += edge.w;
-        }
-    }
-
-    return total_weight - mst_weight;
-}
-
-int main() {
-    int t;
-    cin >> t;
-    while (t--){
-        int n;
-        cin >> n;
-        vector<Edge> edges(n - 1);
-    
-        for (int i = 0; i < n - 1; i++) 
-        {
-            cin >> edges[i].u >> edges[i].v >> edges[i].w;
-        }
-    
-        cout << solve(n, edges) << endl;
-    }
-    
-
-    return 0;
-}

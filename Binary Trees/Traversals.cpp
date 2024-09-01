@@ -14,17 +14,17 @@ void InOrder(Node* root)
 {
     if(root == NULL) return;
 
-    preOrder(root -> left);
+    InOrder(root -> left);
     v.push_back(root -> val);
-    preOrder(root -> right);
+    InOrder(root -> right);
 }
 
 void postOrder(Node* root)
 {
     if(root == NULL) return;
 
-    preOrder(root -> left);
-    preOrder(root -> right);
+    postOrder(root -> left);
+    postOrder(root -> right);
     v.push_back(root -> val);
 }
 

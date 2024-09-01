@@ -20,3 +20,32 @@ public:
         return dp[m][n];
     }
 };
+
+void printLCS(string s1, string s2)
+{
+    int m = s1.size();
+    int n = s2.size();
+
+    int len = longestCommonSubsequence(s1,s2);
+
+    string ans = "";
+    for(int i=0;i<len;i++) ans += '$';
+
+    int index = len - 1;
+    int i = n;j = m;
+
+    while(i>=0 && j>=0) 
+    {
+        if(s1[i-1]==s2[j-1])
+        {
+            ans[index] = s[i-1];
+            index -= 1;
+            i--;
+            j--;
+        }
+        else if(dp[i-1][j] > dp[i][j-1]) i--;
+        else j--;
+    }
+
+    cout<<ans<<endl;
+}

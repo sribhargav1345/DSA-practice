@@ -24,7 +24,7 @@ public:
 
 	bool isCyclic(int v, vector<int> adj[]) {
 
-	    vector<int> visisted(v+1);
+	    vector<int> vis(v+1);
 		int pathVis[v] = {0};
 
 		for (int i = 0; i < V; i++) {

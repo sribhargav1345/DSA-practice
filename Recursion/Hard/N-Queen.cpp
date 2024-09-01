@@ -10,17 +10,7 @@ public:
             row--;
             col--;
         }
-
-        row = duprow;
-        col = dupcol;
-
-        // This loop is not needed, since we didn't solve for right ones
-        while(row<n && col<n){
-            if(board[row][col]=='Q') return false;
-            row++;
-            col++;
-        }
-
+        
         row = duprow;
         col = dupcol;
 
