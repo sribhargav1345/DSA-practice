@@ -2,6 +2,7 @@
 using namespace std;
 typedef long long ll;
 
+// Rotate the array by k places left
 class Solution {
 public:
     void rotate(vector<int>& arr, int k) {
