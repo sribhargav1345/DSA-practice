@@ -1,0 +1,1 @@
+{"name":"Local: Squaresum","url":"d:\\Placements\\DSA-practice\\UKG\\Squaresum.cpp","tests":[{"id":1731648077440,"input":"3\n1 1 \n1 2\n2 1\n3","output":"9"},{"id":1731648334335,"input":"2\n0 0\n2 4\n2","output":"36"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Placements\\DSA-practice\\UKG\\Squaresum.cpp","group":"local","local":true}

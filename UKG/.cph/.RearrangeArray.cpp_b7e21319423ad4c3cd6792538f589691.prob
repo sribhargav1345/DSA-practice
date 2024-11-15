@@ -1,0 +1,1 @@
+{"name":"Local: RearrangeArray","url":"d:\\Placements\\DSA-practice\\UKG\\RearrangeArray.cpp","tests":[{"id":1731617060536,"input":"7\n1 3 5 2 1 3 1","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Placements\\DSA-practice\\UKG\\RearrangeArray.cpp","group":"local","local":true}

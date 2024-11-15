@@ -1,0 +1,1 @@
+{"name":"Local: findEquivalentMag","url":"d:\\Placements\\DSA-practice\\UKG\\findEquivalentMag.cpp","tests":[{"id":1731614683604,"input":"3\n1 2\n2 3\n2 1\n1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Placements\\DSA-practice\\UKG\\findEquivalentMag.cpp","group":"local","local":true}

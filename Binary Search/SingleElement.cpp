@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        // Trying in Binary search approach -> More optimised than xor
+        // Trying in Binary search approach -> More optimised than xor, if array is sorted
 
         // The approach is simple. If the mid element is odd index(0-index), then if(nums[i]==nums[i-1]) target is on right
         int n = nums.size();

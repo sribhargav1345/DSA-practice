@@ -1,59 +1,71 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 
-vector<int> shortestDistanceAfterQueries(int n, vector<vector<int>>& q) {
-    int m = q.size();
-    vector<int> ans;
-    
-    vector<int> distances(n);
-    for (int i = 0; i < n; i++) {
-        distances[i] = n - i - 1;
-    }
-
-    vector<int> suffix(n,0);
-    suffix[n-1] = distances[n-1];
-
-    for(int i=n-2;i>=0;i--)
+void findMaxMatrixSize(vector<vector<ll>>& arr, int p)
+{
+    ll n = arr.size();
+    ll m = arr[0].size();
+ 
+    vector<vector<ll>> dp(n+1,vector<ll>(m+1,0));
+ 
+    for(int i=1;i<=n;i++)
     {
-        suffix[i] = suffix[i+1] + distances[i];
-    }
-
-    for (int i = 0; i < m; i++) {
-        int x = q[i][0];
-        int y = q[i][1];
-        int ct = 1;
-
-        for (int j = x; j >= 0; j--) {
-            distances[j] = min(distances[j], distances[y] + ct);
-            ct++;
+        for(int j=1;j<=m;j++) 
+        {
+            dp[i][j] = arr[i-1][j-1]+dp[i-1][j]+dp[i][j-1]-dp[i-1][j-1];
         }
-
-        ans.push_back(distances[0]);
     }
+    ll ans = 0;
+ 
+    for(ll i=1;i<=n;i++) 
+    {
+        for(ll j=1;j<=m;j++) 
+        {
+            ll op = dp[i][j];
 
-    return ans;
+            if(op<=p){
+                ans = max(ans,i*j);
+            }
+            else
+            {
+                for(ll k=1;k<=i;k++)
+                {
+                    for(ll l=1;l<=j;l++)
+                    {
+                        if(op-dp[k][l]<=p)
+                        {
+                            ans = max(ans,(i-k)*(j-l));
+                        }
+                    }
+                }
+            }
+        }
+    }
+    cout<<ans<<endl;
 }
+ 
+// Driver Code
+int main()
+{
+    ll t;
+    cin>>t;
 
-int main() {
-    int n;
-    cin >> n;
+    while(t--)
+    {
+        ll n,m,k;
+        cin>>n>>m>>k;
 
-    vector<vector<int>> queries;
-    int m = 2;
-    for (int i = 0; i < m; i++) {
-        int l, r;
-        cin >> l >> r;
-        queries.push_back({l, r});
-    }
-
-    vector<int> result = shortestDistanceAfterQueries(n, queries);
-    for (auto x : result) {
-        cout << x << " ";
-    }
-    cout << endl;
-
+        vector<vector<ll>> arr(n,vector<ll>(m,0));
+        for(ll i=0;i<n;i++)
+        {
+            for(ll j=0;j<m;j++)
+            {
+                cin>>arr[i][j];
+            }
+        }
+    
+        findMaxMatrixSize(arr,k);
+    }   
     return 0;
 }
