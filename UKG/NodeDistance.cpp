@@ -27,12 +27,18 @@ int solve(int n,vector<int>& from,vector<int>& to,vector<int>& weights,ll x,ll y
     dfs(adj,1,v);
     int mini = INT_MAX;
 
-    for(int i=0;i<n;i++)
+    int ans = -1;
+    for(int i=1;i<=n;i++)
     {
         int p = v[i];
-        mini = min(mini,abs(p-v[x])+abs(p-v[y])+abs(p-v[z]));
+        int ct = abs(p-v[x])+abs(p-v[y])+abs(p-v[z]);
+
+        if(ct<mini){
+            mini = ct;
+            ans = i;
+        }
     }
-    return mini;
+    return ans;
 }
 
 int main()
