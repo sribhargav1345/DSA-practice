@@ -38,7 +38,7 @@ void printLCS(string s1, string s2)
     {
         if(s1[i-1]==s2[j-1])
         {
-            ans[index] = s[i-1];
+            ans[index] = s1[i-1];
             index -= 1;
             i--;
             j--;

@@ -13,7 +13,7 @@ public:
         int temp[k];
         for(int i=n-k;i<n;i++)
         {
-           temp[i-n+k] = arr[i];
+           temp[i-(n-k)] = arr[i];
         }
 
         for(int i=n-k-1;i>=0;i--)

@@ -28,7 +28,7 @@ public:
             }
             else
             {
-                leftsmall[i] = st.top() + 1;
+                leftsmall[i] = st.top() + 1;        // Left small's find chesi daani right element add chestam
                 st.push(i);
             }
         }
